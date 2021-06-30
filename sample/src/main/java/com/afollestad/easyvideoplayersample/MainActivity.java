@@ -2,13 +2,13 @@ package com.afollestad.easyvideoplayersample;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.afollestad.easyvideoplayer.EasyVideoCallback;
 import com.afollestad.easyvideoplayer.EasyVideoPlayer;
-import com.afollestad.materialdialogs.MaterialDialog;
 
 public class MainActivity extends AppCompatActivity implements EasyVideoCallback {
 
@@ -52,11 +52,6 @@ public class MainActivity extends AppCompatActivity implements EasyVideoCallback
     @Override
     public void onError(EasyVideoPlayer player, Exception e) {
         Log.d("EVP-Sample", "onError(): " + e.getMessage());
-        new MaterialDialog.Builder(this)
-                .title(R.string.error)
-                .content(e.getMessage())
-                .positiveText(android.R.string.ok)
-                .show();
     }
 
     @Override
